@@ -1,0 +1,31 @@
+PLINK v1.90b6.18 64-bit (16 Jun 2020)
+Options in effect:
+  --file SNPchip_genotypes_in_Plink_format/Sable_Nugen_Illumina_Affy_combined
+  --horse
+  --recode vcf
+
+Hostname: stefan-81x2
+Working directory: /home/stefan/Documents/snp/NugenPilotAnalysis
+Start time: Mon Feb 15 23:24:35 2021
+
+Random number seed: 1613456675
+15436 MB RAM detected; reserving 7718 MB for main workspace.
+Scanning .ped file... done.
+Performing single-pass .bed write (279 variants, 44 horses).
+--file: plink-temporary.bed + plink-temporary.bim + plink-temporary.fam
+written.
+279 variants loaded from .bim file.
+44 horses (14 males, 14 females, 16 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to plink.nosex .
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 44 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Warning: 32 het. haploid genotypes present (see plink.hh ); many commands treat
+these as missing.
+Total genotyping rate is 0.923265.
+279 variants and 44 horses pass filters and QC.
+Note: No phenotypes present.
+Warning: Underscore(s) present in sample IDs.
+--recode vcf to plink.vcf ... done.
+
+End time: Mon Feb 15 23:24:35 2021

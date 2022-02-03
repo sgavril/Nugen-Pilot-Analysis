@@ -1,0 +1,14 @@
+name: variant_analysis
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - bamtools=2.5.1
+  - bcftools=1.11
+  - bowtie2=2.4.2
+  - gatk4=4.1.9.0
+  - plink=1.90b6.18
+  - samtools=1.11
+  - tabix=0.2.6
+  - trim-galore=0.6.2

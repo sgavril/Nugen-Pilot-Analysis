@@ -1,0 +1,15 @@
+PLINK v1.90b6.18 64-bit (16 Jun 2020)
+Options in effect:
+  --horse
+  --out plink.vcf
+  --recode Sable_Nugen_Illumina_Affy_combined
+  --vcf
+
+Hostname: stefan-81x2
+Working directory: /home/stefan/Documents/snp/nugen_pilot_analysis/SNPchip_genotypes_in_Plink_format
+Start time: Thu Jan 21 21:13:05 2021
+
+Error: Invalid --recode parameter 'Sable_Nugen_Illumina_Affy_combined'.
+For more information, try "plink --help <flag name>" or "plink --help | more".
+
+End time: Thu Jan 21 21:13:05 2021
