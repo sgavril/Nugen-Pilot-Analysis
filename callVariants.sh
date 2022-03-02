@@ -152,7 +152,7 @@ rm merged.mpileup ; rm merged.vcf ; rm merged.filt.vcf
 
 # Just some text formatting
 sed -i 's;intermediates/;;g' merged.sort.mpileup
-sed -i 's/_L001_R1_001.bam//g' merged.sored.mpileup
+sed -i 's/_L001_R1_001.bam//g' merged.sort.mpileup
 sed -i 's;intermediates/;;g' merged.sort.vcf
 sed -i 's/_L001_R1_001.bam//g' merged.sort.vcf
 sed -i 's;intermediates/;;g' merged.filt.sort.vcf

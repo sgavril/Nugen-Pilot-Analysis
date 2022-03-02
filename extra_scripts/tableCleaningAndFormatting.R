@@ -10,7 +10,7 @@ colnames(ref.gen) <- colnames(ref.gen) %>%
   gsub("\\.GT", "", .) %>%
   gsub("Sable_", "", .) %>%
   gsub("\\.", "-", .)
-colnames(ref.gen)[which(!colnames(ref.gen) %in% meta$SNP_chip_sample)]
+#colnames(ref.gen)[which(!colnames(ref.gen) %in% meta$SNP_chip_sample)]
 
 # Map sample names
 # We have some repeat samples that will map to multiple individuals
@@ -36,7 +36,7 @@ names(ref.gen) <- newColNames
 rm(newColNames)
 
 # Make sure that sample names are same order as other tables
-ref.gen[order(ref.gen[-c(1:4)]), -c(1:4)]
+#ref.gen[order(ref.gen[-c(1:4)]), -c(1:4)]
 ref.gen.only <- ref.gen[-c(1:4)]
 ref.gen.only.sort <- ref.gen.only[, order(colnames(ref.gen.only))]
 ref.gen <- cbind(ref.gen[c(1:4)], ref.gen.only.sort)
@@ -114,11 +114,11 @@ mean(sampleStats$V4/sampleStats$V2*100)
 sd(sampleStats$V4/sampleStats$V2*100)
 
 # Number of reads after generating mpileup file
-mpileup.dep$Undetermined_S0_L001_R1_001.bam.DP <- NULL
+mpileup.dep$Undetermined_S0.DP <- NULL
 mpileup.reads <- data.frame(colSums(mpileup.dep[-c(1:4)]))
 #names(mpileup.reads) <- c("V5")
 sampleStats$V5 <- mpileup.reads[sort(rownames(mpileup.reads)), ]
-mpileup.reads
+#mpileup.reads
 mean(sampleStats$V5) ; sd(sampleStats$V5)
 
 # Number of reads after using bcftools call 
@@ -126,7 +126,7 @@ nug.dep$Undetermined_S0.DP <- NULL
 call.reads <- data.frame(colSums(nug.dep[-c(1:4)]))
 #names(call.reads) <- c("V6")
 sampleStats$V6 <- call.reads[sort(rownames(call.reads)), ]
-call.reads
+#call.reads
 mean(sampleStats$V6) ; sd(sampleStats$V6)
 
 # Number of reads after filtering variants
@@ -134,7 +134,7 @@ nug.dep.filt$Undetermined_S0.DP <- NULL
 filt.reads <- data.frame(colSums(nug.dep.filt[-c(1:4)]))
 #names(filt.reads) <- c("V7")
 sampleStats$V7 <- filt.reads[sort(rownames(filt.reads)), ]
-filt.reads
+#filt.reads
 mean(sampleStats$V7) ; sd(sampleStats$V7)
 
 # What is the proportion of the 279 targets with a genotype? mpileup
