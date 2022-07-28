@@ -2,7 +2,7 @@ library(dplyr)
 library(reshape2)
 library(gtools)
 
-meta <- read.table("../data/info_about_samples_in_test_run.csv", sep = ",", header = T)
+meta <- read.table("../data/info_about_samples_in_test_run.csv", sep = "\t", header = T)
 ref.gen <- read.table("../data/ref.genotypes.table", header = T, sep = "\t")
 
 # Remove unnecessary strings in column names

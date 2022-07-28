@@ -131,9 +131,9 @@ done
     ## Found perfect matches for the following adapter sequences:
     ## Adapter type Count   Sequence    Sequences analysed  Percentage
     ## Illumina 1   AGATCGGAAGAGC   9814    0.01
-    ## smallRNA 0   TGGAATTCTCGG    9814    0.00
     ## Nextera  0   CTGTCTCTTATA    9814    0.00
-    ## Using Illumina adapter for trimming (count: 1). Second best hit was smallRNA (count: 0)
+    ## smallRNA 0   TGGAATTCTCGG    9814    0.00
+    ## Using Illumina adapter for trimming (count: 1). Second best hit was Nextera (count: 0)
     ## 
     ...
 
@@ -257,7 +257,7 @@ mv *_rg.bam* intermediates
     ## Using GATK jar /home/stefan/miniconda3/envs/variant_analysis/share/gatk4-4.1.9.0-0/gatk-package-4.1.9.0-local.jar
     ## Running:
     ##     java -Dsamjdk.use_async_io_read_samtools=false -Dsamjdk.use_async_io_write_samtools=true -Dsamjdk.use_async_io_write_tribble=false -Dsamjdk.compression_level=2 -jar /home/stefan/miniconda3/envs/variant_analysis/share/gatk4-4.1.9.0-0/gatk-package-4.1.9.0-local.jar AddOrReplaceReadGroups I=intermediates/B1_2014_S3_L001_R1_001.bam O=B1_2014_S3_L001_R1_001_rg.bam RGID=1 RGLB=lib1 RGPL=nugen RGPU=unit1 RGSM=intermediates/B1_2014_S3_L001_R1_001.bam
-    ## INFO 2022-06-15 21:02:13 AddOrReplaceReadGroups  
+    ## INFO 2022-06-15 23:39:36 AddOrReplaceReadGroups  
     ## 
     ## ********** NOTE: Picard's command line syntax is changing.
     ## **********
@@ -270,12 +270,12 @@ mv *_rg.bam* intermediates
     ## **********
     ## 
     ## 
-    ## 21:02:13.415 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/home/stefan/miniconda3/envs/variant_analysis/share/gatk4-4.1.9.0-0/gatk-package-4.1.9.0-local.jar!/com/intel/gkl/native/libgkl_compression.so
-    ## [Wed Jun 15 21:02:13 MDT 2022] AddOrReplaceReadGroups INPUT=intermediates/B1_2014_S3_L001_R1_001.bam OUTPUT=B1_2014_S3_L001_R1_001_rg.bam RGID=1 RGLB=lib1 RGPL=nugen RGPU=unit1 RGSM=intermediates/B1_2014_S3_L001_R1_001.bam    VERBOSITY=INFO QUIET=false VALIDATION_STRINGENCY=STRICT COMPRESSION_LEVEL=2 MAX_RECORDS_IN_RAM=500000 CREATE_INDEX=false CREATE_MD5_FILE=false GA4GH_CLIENT_SECRETS=client_secrets.json USE_JDK_DEFLATER=false USE_JDK_INFLATER=false
-    ## Jun 15, 2022 9:02:13 PM shaded.cloud_nio.com.google.auth.oauth2.ComputeEngineCredentials runningOnComputeEngine
+    ## 23:39:36.899 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/home/stefan/miniconda3/envs/variant_analysis/share/gatk4-4.1.9.0-0/gatk-package-4.1.9.0-local.jar!/com/intel/gkl/native/libgkl_compression.so
+    ## [Wed Jun 15 23:39:36 MDT 2022] AddOrReplaceReadGroups INPUT=intermediates/B1_2014_S3_L001_R1_001.bam OUTPUT=B1_2014_S3_L001_R1_001_rg.bam RGID=1 RGLB=lib1 RGPL=nugen RGPU=unit1 RGSM=intermediates/B1_2014_S3_L001_R1_001.bam    VERBOSITY=INFO QUIET=false VALIDATION_STRINGENCY=STRICT COMPRESSION_LEVEL=2 MAX_RECORDS_IN_RAM=500000 CREATE_INDEX=false CREATE_MD5_FILE=false GA4GH_CLIENT_SECRETS=client_secrets.json USE_JDK_DEFLATER=false USE_JDK_INFLATER=false
+    ## Jun 15, 2022 11:39:37 PM shaded.cloud_nio.com.google.auth.oauth2.ComputeEngineCredentials runningOnComputeEngine
     ## INFO: Failed to detect whether we are running on Google Compute Engine.
-    ## [Wed Jun 15 21:02:13 MDT 2022] Executing as stefan@stefan-81x2 on Linux 5.15.46-1-MANJARO amd64; OpenJDK 64-Bit Server VM 1.8.0_312-b07; Deflater: Intel; Inflater: Intel; Provider GCS is available; Picard version: 4.1.9.0
-    ## INFO 2022-06-15 21:02:13 AddOrReplaceReadGroups  Created read-group ID=1 PL=nugen LB=lib1 SM=intermediates/B1_2014_S3_L001_R1_001.bam
+    ## [Wed Jun 15 23:39:37 MDT 2022] Executing as stefan@stefan-81x2 on Linux 5.15.46-1-MANJARO amd64; OpenJDK 64-Bit Server VM 1.8.0_312-b07; Deflater: Intel; Inflater: Intel; Provider GCS is available; Picard version: 4.1.9.0
+    ## INFO 2022-06-15 23:39:37 AddOrReplaceReadGroups  Created read-group ID=1 PL=nugen LB=lib1 SM=intermediates/B1_2014_S3_L001_R1_001.bam
     ## 
     ...
 
@@ -376,28 +376,28 @@ gatk VariantsToTable -V ref.vcf -F CHROM -F POS -F REF -F ALT -GF DP \
     ## Using GATK jar /home/stefan/miniconda3/envs/variant_analysis/share/gatk4-4.1.9.0-0/gatk-package-4.1.9.0-local.jar
     ## Running:
     ##     java -Dsamjdk.use_async_io_read_samtools=false -Dsamjdk.use_async_io_write_samtools=true -Dsamjdk.use_async_io_write_tribble=false -Dsamjdk.compression_level=2 -jar /home/stefan/miniconda3/envs/variant_analysis/share/gatk4-4.1.9.0-0/gatk-package-4.1.9.0-local.jar VariantsToTable -V merged.sort.mpileup -F CHROM -F POS -F REF -F ALT -GF DP -O merged.depths.mpileup.table
-    ## 21:05:05.686 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/home/stefan/miniconda3/envs/variant_analysis/share/gatk4-4.1.9.0-0/gatk-package-4.1.9.0-local.jar!/com/intel/gkl/native/libgkl_compression.so
-    ## Jun 15, 2022 9:05:05 PM shaded.cloud_nio.com.google.auth.oauth2.ComputeEngineCredentials runningOnComputeEngine
+    ## 23:42:29.108 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/home/stefan/miniconda3/envs/variant_analysis/share/gatk4-4.1.9.0-0/gatk-package-4.1.9.0-local.jar!/com/intel/gkl/native/libgkl_compression.so
+    ## Jun 15, 2022 11:42:29 PM shaded.cloud_nio.com.google.auth.oauth2.ComputeEngineCredentials runningOnComputeEngine
     ## INFO: Failed to detect whether we are running on Google Compute Engine.
-    ## 21:05:05.897 INFO  VariantsToTable - ------------------------------------------------------------
-    ## 21:05:05.897 INFO  VariantsToTable - The Genome Analysis Toolkit (GATK) v4.1.9.0
-    ## 21:05:05.897 INFO  VariantsToTable - For support and documentation go to https://software.broadinstitute.org/gatk/
-    ## 21:05:05.897 INFO  VariantsToTable - Executing as stefan@stefan-81x2 on Linux v5.15.46-1-MANJARO amd64
-    ## 21:05:05.897 INFO  VariantsToTable - Java runtime: OpenJDK 64-Bit Server VM v1.8.0_312-b07
-    ## 21:05:05.898 INFO  VariantsToTable - Start Date/Time: June 15, 2022 9:05:05 MDT PM
-    ## 21:05:05.898 INFO  VariantsToTable - ------------------------------------------------------------
-    ## 21:05:05.898 INFO  VariantsToTable - ------------------------------------------------------------
-    ## 21:05:05.898 INFO  VariantsToTable - HTSJDK Version: 2.23.0
-    ## 21:05:05.898 INFO  VariantsToTable - Picard Version: 2.23.3
-    ## 21:05:05.898 INFO  VariantsToTable - HTSJDK Defaults.COMPRESSION_LEVEL : 2
-    ## 21:05:05.898 INFO  VariantsToTable - HTSJDK Defaults.USE_ASYNC_IO_READ_FOR_SAMTOOLS : false
-    ## 21:05:05.898 INFO  VariantsToTable - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_SAMTOOLS : true
-    ## 21:05:05.898 INFO  VariantsToTable - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_TRIBBLE : false
-    ## 21:05:05.898 INFO  VariantsToTable - Deflater: IntelDeflater
-    ## 21:05:05.898 INFO  VariantsToTable - Inflater: IntelInflater
-    ## 21:05:05.899 INFO  VariantsToTable - GCS max retries/reopens: 20
-    ## 21:05:05.899 INFO  VariantsToTable - Requester pays: disabled
-    ## 21:05:05.899 INFO  VariantsToTable - Initializing engine
+    ## 23:42:29.294 INFO  VariantsToTable - ------------------------------------------------------------
+    ## 23:42:29.295 INFO  VariantsToTable - The Genome Analysis Toolkit (GATK) v4.1.9.0
+    ## 23:42:29.295 INFO  VariantsToTable - For support and documentation go to https://software.broadinstitute.org/gatk/
+    ## 23:42:29.295 INFO  VariantsToTable - Executing as stefan@stefan-81x2 on Linux v5.15.46-1-MANJARO amd64
+    ## 23:42:29.295 INFO  VariantsToTable - Java runtime: OpenJDK 64-Bit Server VM v1.8.0_312-b07
+    ## 23:42:29.295 INFO  VariantsToTable - Start Date/Time: June 15, 2022 11:42:29 MDT PM
+    ## 23:42:29.295 INFO  VariantsToTable - ------------------------------------------------------------
+    ## 23:42:29.295 INFO  VariantsToTable - ------------------------------------------------------------
+    ## 23:42:29.295 INFO  VariantsToTable - HTSJDK Version: 2.23.0
+    ## 23:42:29.296 INFO  VariantsToTable - Picard Version: 2.23.3
+    ## 23:42:29.296 INFO  VariantsToTable - HTSJDK Defaults.COMPRESSION_LEVEL : 2
+    ## 23:42:29.296 INFO  VariantsToTable - HTSJDK Defaults.USE_ASYNC_IO_READ_FOR_SAMTOOLS : false
+    ## 23:42:29.296 INFO  VariantsToTable - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_SAMTOOLS : true
+    ## 23:42:29.296 INFO  VariantsToTable - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_TRIBBLE : false
+    ## 23:42:29.296 INFO  VariantsToTable - Deflater: IntelDeflater
+    ## 23:42:29.296 INFO  VariantsToTable - Inflater: IntelInflater
+    ## 23:42:29.296 INFO  VariantsToTable - GCS max retries/reopens: 20
+    ## 23:42:29.296 INFO  VariantsToTable - Requester pays: disabled
+    ## 23:42:29.296 INFO  VariantsToTable - Initializing engine
     ...
 
 ### Final formatting and clean-up
@@ -420,11 +420,10 @@ cd extra_scripts ; Rscript tableCleaningAndFormatting.R ; cd ..
     ## 
     ##     intersect, setdiff, setequal, union
     ## 
-    ## Error in file(file, "rt") : cannot open the connection
-    ## Calls: read.table -> file
-    ## In addition: Warning message:
-    ## In file(file, "rt") :
-    ##   cannot open file '../data/ref.genotypes.table': No such file or directory
+    ## [1] "SI_hair_152" "SI_hair_471" "SI_hair_516" "SI_hair_516"
+    ## Error in scan(file = file, what = what, sep = sep, quote = quote, dec = dec,  : 
+    ##   line 2 did not have 5 elements
+    ## Calls: read.table -> scan
     ## Execution halted
 
 Here is some optional clean up to move or remove files we no longer
