@@ -4,10 +4,10 @@ Allegro Targeted Genotyping variant calling
 # Overview
 
 This workflow calls variants using sequence data obtained from the
-Allegro Targeted Sequencing (ATG) assay. Overall, we will: 1. Call
-variants using the suggested pipeline by Nugen a. Run trim_galore to
-remove the first 40 nucleotides 2. Use the VariantsToTable utility from
-GATK to get our final outputs
+Allegro (formerly Nugen) Targeted Sequencing (ATG) assay. This repo
+contains the code used to call variants in our publication 
+available at https://link.springer.com/article/10.1007/s12686-022-01259-2.
+The repo is kept public here for posterity. 
 
 ### Set up
 
